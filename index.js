@@ -5,7 +5,7 @@ var shift = require('stream-shift')
 
 var SIGNAL_FLUSH = (Buffer.from && Buffer.from !== Uint8Array.from)
   ? Buffer.from([0])
-  : new Buffer([0])
+  : Buffer.from([0])
 
 var onuncork = function(self, fn) {
   if (self._corked) self.once('uncork', fn)
